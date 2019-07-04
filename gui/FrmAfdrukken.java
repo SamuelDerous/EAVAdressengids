@@ -1775,6 +1775,8 @@ public class FrmAfdrukken extends javax.swing.JFrame {
     private void afdrukRapport(String gemorg) {
         GemorgDao gemorgDao = new GemorgDao(drm.getConnection());
         Gemorg kerk = gemorgDao.getGemorgByName(gemorg);
+        DenominDao denominDao = new DenominDao(drm.getConnection());
+        Denomin denominatie = denominDao.getDenominatieByRef(kerk.getDenomin().getDenomin());
         List<Codes> verantwoordelijken;
         List<String> plaatsen;
         List<Codes> kerken;
@@ -1806,7 +1808,8 @@ public class FrmAfdrukken extends javax.swing.JFrame {
                 sb.append("Neen");
             }
             sb.append("</td></tr>");
-            sb.append("<td>Denominatie:</td><td>" + kerk.getDenomin().getNaam1() + "<br></td></tr></table><p>");
+            
+            sb.append("<td>Denominatie:</td><td>" + denominatie.getNaam1() + ((denominatie.getNaam2() == null || denominatie.getNaam2().equals("")) ? "" : " " + denominatie.getNaam2()) + "<br></td></tr></table><p>");
             
             sb.append("<b>Bovenstaande gegevens:</b><br>");
             sb.append("<input type='checkbox'value='test'/>Ongewijzigd behouden <input type='checkbox' />Wijzigen <input type='checkbox' />Schrappen<br>");

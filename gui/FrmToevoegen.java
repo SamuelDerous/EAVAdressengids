@@ -87,13 +87,13 @@ public class FrmToevoegen extends javax.swing.JFrame {
 
         String bestandLanden;
         try {
-        bestandLanden = "bestanden/landen.txt";
+        /*bestandLanden = "bestanden/landen.txt";
         System.out.println(bestandLanden);
         String[] landen = vulComboLanden(bestandLanden);
         for(int i = 0; i < landen.length; i++) {
             cmbLand.addItem(landen[i]);
         }
-        cmbLand.setSelectedIndex(23); 
+        cmbLand.setSelectedIndex(23); */
         vulVerantwoordelijken();
         int grootste = 0;
         for(int i = 0; i < verantwoordelijken.size(); i++) {

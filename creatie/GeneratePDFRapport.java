@@ -410,6 +410,7 @@ public class GeneratePDFRapport {
             DenominDao denominDao = new DenominDao(drm.getConnection());
             Denomin denomin = denominDao.getDenominatieByRef(kerk.getDenomin().getDenomin());
             if(denomin != null) {
+                String test = denomin.getNaam1();
                 cel = new PdfPCell(new Paragraph(denomin.getNaam1(), standaard));
             } else {
                 cel = new PdfPCell(new Paragraph("", standaard));

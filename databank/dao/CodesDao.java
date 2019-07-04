@@ -295,7 +295,7 @@ public class CodesDao {
         try {
             lijst = con.prepareStatement("SELECT distinct gemorg.refnum, gemorg.naam1, gemorg.straat, gemorg.postcode, gemorg.woonpl, gemorg.telefoon, gemorg.email, gemorg.website, gemorg.sorteer,\n" +
                                          "verantw.titel, verantw.naam1, verantw.voornaam, verantw.naam2, verantw.straat, verantw.postcode, verantw.woonpl, verantw.telefoon, verantw.email,\n" +
-                                         "codes.funccode, codes.funccod2\n" +
+                                         "codes.funccode, codes.funccod2, codes.volgnum \n" +
                                          "FROM EAVAdressengids.codes, \n" +
                                          "EAVAdressengids.verantw, \n" +
                                          "EAVAdressengids.gemorg \n" +

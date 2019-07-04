@@ -58,7 +58,7 @@ public class MailSend {
 
     public void verzend(ArrayList<String> bestand) {
         Properties mailProperties = System.getProperties();
-        mailProperties.setProperty("mail.smtp.host", host);
+        mailProperties.setProperty("mail.smtp.host", "smtp.scarlet.be"); //host);
         Session session = Session.getDefaultInstance(mailProperties);
         session.getDebugOut();
         MimeMessage message = new MimeMessage(session);
@@ -95,14 +95,14 @@ public class MailSend {
         }
     }
 
-    public static void main(String[] args) {
-        /*VerlofMail newMail = new VerlofMail("smtp.scarlet.be", "detalisman@hotmail.com",
-        "samuel.derous@scarlet.be", "Testbericht", "Dit is een test");
+   /* public static void main(String[] args) {
+        MailSend newMail = new MailSend("smtp.scarlet.be", "detalisman@hotmail.com",
+                {"samuel.derous@scarlet.be"}, "Testbericht", "Dit is een test");
         newMail.verzend();
         Properties mail = System.getProperties();
         System.out.println(mail.toString());
-         */
-    }
+         
+    }*/
     
     
 }
