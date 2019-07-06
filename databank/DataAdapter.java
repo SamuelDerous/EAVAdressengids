@@ -36,7 +36,7 @@ public class DataAdapter {
                 wachtwoord = EncryptionIni.decrypt(Initialisatie.getGegeven("DBWachtwoord"));
              }
             host = Initialisatie.getGegeven("DBHost");
-            String sourceUrl = "jdbc:mysql://" + host + "/EAVAdressengids?user=" +
+            String sourceUrl = "jdbc:mysql://" + host + "/eav_adressengids?user=" +
                     gebruikersnaam + "&password=" + wachtwoord;
             driver = "com.mysql.jdbc.Driver";
             Class.forName(driver);
@@ -61,7 +61,7 @@ public class DataAdapter {
      public DataAdapter(String host, String gebruikersnaam, String wachtwoord) {
         try {
             //Class.forName("org.apache.derby.jdbc.ClientDrive");
-            String sourceUrl = "jdbc:mysql://" + host + "/EAVAdressengids?user=" + gebruikersnaam +
+            String sourceUrl = "jdbc:mysql://" + host + "/eav_adressengids?user=" + gebruikersnaam +
                     "&password=" + wachtwoord;
             driver = "com.mysql.jdbc.Driver";
             Class.forName(driver);

@@ -33,7 +33,7 @@ public class GemorgDao {
         List<String> gemorgs = new ArrayList<String>();
         try {
             lijst = con.prepareStatement("SELECT distinct gemorg.sorteer " + 
-                                         "FROM EAVAdressengids.gemorg " +
+                                         "FROM eav_adressengids.gemorg " +
                                          "where gemorg.sorteer is not null " +
                                          "order by gemorg.sorteer;");
             //lijst.setString(1, gemorg);

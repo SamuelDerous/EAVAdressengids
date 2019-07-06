@@ -58,7 +58,7 @@ public class MailSend {
 
     public void verzend(ArrayList<String> bestand) {
         Properties mailProperties = System.getProperties();
-        mailProperties.setProperty("mail.smtp.host", "smtp.scarlet.be"); //host);
+        mailProperties.setProperty("mail.smtp.host", host);
         Session session = Session.getDefaultInstance(mailProperties);
         session.getDebugOut();
         MimeMessage message = new MimeMessage(session);

@@ -220,11 +220,11 @@ public class DlgAanpassen extends javax.swing.JDialog {
         lblVoornaam.setText("Voornaam:");
 
         String bestandLanden = "bestanden/landen.txt";
-        /*String[] landen = vulComboLanden(bestandLanden);
+        String[] landen = vulComboLanden(bestandLanden);
         for(int i = 0; i < landen.length; i++) {
             cmbLand.addItem(landen[i]);
         }
-        cmbLand.setSelectedIndex(24);*/
+        cmbLand.setSelectedIndex(24);
         vulVerantwoordelijken();
         
         

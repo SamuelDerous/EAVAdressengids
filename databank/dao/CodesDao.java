@@ -115,10 +115,10 @@ public class CodesDao {
         List<Integer> verantwoordelijken = new ArrayList<Integer>();
         try {
             lijst = con.prepareStatement("SELECT gemorg.sorteer, gemorg.naam1, count(verantw.naam1) as verantwoordelijken " +
-                                         "FROM EAVAdressengids.codes, " +
-                                         "EAVAdressengids.samenkom, " +
-                                         "EAVAdressengids.verantw, " +
-                                         "EAVAdressengids.gemorg " +
+                                         "FROM eav_adressengids.codes, " +
+                                         "eav_adressengids.samenkom, " +
+                                         "eav_adressengids.verantw, " +
+                                         "eav_adressengids.gemorg " +
                                          "where codes.vref = verantw.vref " +
                                          "and gemorg.refnum = samenkom.refnum " +
                                          "and gemorg.refnum = codes.refnum " +
@@ -149,9 +149,9 @@ public class CodesDao {
         List<Integer> verantwoordelijken = new ArrayList<Integer>();
         try {
             lijst = con.prepareStatement("SELECT gemorg.sorteer, gemorg.naam1, count(verantw.naam1) as verantwoordelijken " +
-                                         "FROM EAVAdressengids.codes, " +
-                                         "EAVAdressengids.verantw, " +
-                                         "EAVAdressengids.gemorg " +
+                                         "FROM eav_adressengids.codes, " +
+                                         "eav_adressengids.verantw, " +
+                                         "eav_adressengids.gemorg " +
                                          "where codes.vref = verantw.vref " +
                                          "and gemorg.refnum = codes.refnum " +
                                          "and gemorg.gemorg = ? " +
@@ -184,10 +184,10 @@ public class CodesDao {
             lijst = con.prepareStatement("SELECT distinct gemorg.refnum, gemorg.naam1, gemorg.straat, gemorg.postcode, gemorg.woonpl, "
                                         + " gemorg.telefoon, gemorg.email, gemorg.website, gemorg.sorteer, gemorg.gemorg,\n"
                                         + " denomin.logo " +
-                                         "FROM EAVAdressengids.codes, \n" +
-                                         "EAVAdressengids.verantw, \n" +
-                                         "EAVAdressengids.denomin,\n" +
-                                         "EAVAdressengids.gemorg \n" +
+                                         "FROM eav_adressengids.codes, \n" +
+                                         "eav_adressengids.verantw, \n" +
+                                         "eav_adressengids.denomin,\n" +
+                                         "eav_adressengids.gemorg \n" +
                                          "where codes.vref = verantw.vref \n" +
                                          "and denomin.denomin = codes.denomin " +
                                          "and gemorg.gemorg = ?\n" +
@@ -243,10 +243,10 @@ public class CodesDao {
             lijst = con.prepareStatement("SELECT distinct gemorg.refnum, gemorg.naam1, gemorg.straat, gemorg.postcode, gemorg.woonpl, "
                                         + " gemorg.telefoon, gemorg.email, gemorg.website, gemorg.gemorg,\n"
                                         + " denomin.logo " +
-                                         "FROM EAVAdressengids.codes, \n" +
-                                         "EAVAdressengids.verantw, \n" +
-                                         "EAVAdressengids.denomin,\n" +
-                                         "EAVAdressengids.gemorg \n" +
+                                         "FROM eav_adressengids.codes, \n" +
+                                         "eav_adressengids.verantw, \n" +
+                                         "eav_adressengids.denomin,\n" +
+                                         "eav_adressengids.gemorg \n" +
                                          "where codes.vref = verantw.vref \n" +
                                          "and denomin.denomin = codes.denomin " +
                                          "and gemorg.gemorg = ?\n" +
@@ -296,9 +296,9 @@ public class CodesDao {
             lijst = con.prepareStatement("SELECT distinct gemorg.refnum, gemorg.naam1, gemorg.straat, gemorg.postcode, gemorg.woonpl, gemorg.telefoon, gemorg.email, gemorg.website, gemorg.sorteer,\n" +
                                          "verantw.titel, verantw.naam1, verantw.voornaam, verantw.naam2, verantw.straat, verantw.postcode, verantw.woonpl, verantw.telefoon, verantw.email,\n" +
                                          "codes.funccode, codes.funccod2, codes.volgnum \n" +
-                                         "FROM EAVAdressengids.codes, \n" +
-                                         "EAVAdressengids.verantw, \n" +
-                                         "EAVAdressengids.gemorg \n" +
+                                         "FROM eav_adressengids.codes, \n" +
+                                         "eav_adressengids.verantw, \n" +
+                                         "eav_adressengids.gemorg \n" +
                                          "where codes.vref = verantw.vref \n" +
                                          "and gemorg.gemorg = ?\n" +
                                          "and gemorg.refnum = codes.refnum \n" +
@@ -361,9 +361,9 @@ public class CodesDao {
             lijst = con.prepareStatement("SELECT distinct gemorg.refnum, gemorg.naam1, gemorg.straat, gemorg.postcode, gemorg.woonpl, gemorg.telefoon, gemorg.email, gemorg.website, gemorg.sorteer,\n" +
                                          "verantw.titel, verantw.naam1, verantw.voornaam, verantw.naam2, verantw.straat, verantw.postcode, verantw.woonpl, verantw.telefoon, verantw.email,\n" +
                                          "codes.id, codes.volgnum, codes.funccode, codes.funccod2\n" +
-                                         "FROM EAVAdressengids.codes, \n" +
-                                         "EAVAdressengids.verantw, \n" +
-                                         "EAVAdressengids.gemorg \n" +
+                                         "FROM eav_adressengids.codes, \n" +
+                                         "eav_adressengids.verantw, \n" +
+                                         "eav_adressengids.gemorg \n" +
                                          "where codes.vref = verantw.vref \n" +
                                          "and gemorg.refnum = codes.refnum \n" +
                                          "and gemorg.naam1 = ?\n" +
@@ -472,7 +472,7 @@ public class CodesDao {
         PreparedStatement strSQL = null;
         List<Codes> codes = new ArrayList<Codes>();
         try {
-            strSQL = con.prepareStatement("SELECT gemorg.refnum, gemorg.naam1, id, funccode, clientnr, funccod2, volgnum, codes.princode FROM EAVAdressengids.codes, EAVAdressengids.gemorg where codes.refnum = gemorg.refnum and codes.vref = ?;");
+            strSQL = con.prepareStatement("SELECT gemorg.refnum, gemorg.naam1, id, funccode, clientnr, funccod2, volgnum, codes.princode FROM eav_adressengids.codes, eav_adressengids.gemorg where codes.refnum = gemorg.refnum and codes.vref = ?;");
             strSQL.setInt(1, vref);
             strSQL.execute();
             ResultSet r = strSQL.getResultSet();
@@ -552,7 +552,7 @@ public class CodesDao {
         List<Codes> verantwoordelijken = new ArrayList<Codes>();
         try {
             allen = con.prepareStatement("SELECT distinct verantw.naam1, verantw.voornaam, verantw.naam2, codes.volgnum, "
-                    + "verantw.telefoon, gemorg.sorteer FROM EAVAdressengids.codes, gemorg, verantw where codes.refnum = gemorg.refnum "
+                    + "verantw.telefoon, gemorg.sorteer FROM eav_adressengids.codes, gemorg, verantw where codes.refnum = gemorg.refnum "
                     + "and verantw.vref = codes.vref order by verantw.naam1;");
             allen.execute();
             ResultSet r = allen.getResultSet();

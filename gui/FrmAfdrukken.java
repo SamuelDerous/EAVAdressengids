@@ -1697,7 +1697,7 @@ public class FrmAfdrukken extends javax.swing.JFrame {
 
     private void btnVerzendenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerzendenActionPerformed
         String[] adressen = txtAdressen.getText().split("; ");
-        MailSend mailing = new MailSend(Initialisatie.getGegeven("EMHost"), Initialisatie.getGegeven("Email"), adressen, "Mail van EAV", txtUitvoer.getText());
+        MailSend mailing = new MailSend(Initialisatie.getGegeven("EmHost"), Initialisatie.getGegeven("Email"), adressen, "Mail van EAV", txtUitvoer.getText());
         mailing.verzend(attachments);
     }//GEN-LAST:event_btnVerzendenActionPerformed
 
